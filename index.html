@@ -40,10 +40,12 @@
     let params = new URLSearchParams(g.search);
 
     if (!localStorage.getItem("searchId")) {
+      console.log("child domain, settting id in localStorage");
       localStorage.setItem("searchId", "search-" + nanoid());
     }
     if (params.get("success")) {
-      window.history.pushState(null, document.title, params.get("success"));
+      console.log("child domain, passing id to success url");
+      window.history.pushState(null, document.title, params.get("success") + "?searchId="+ localStorage.getItem("searchId"));
     }
   </script>
 </head>
