@@ -45,7 +45,7 @@
     }
     if (params.get("success")) {
       console.log("child domain, passing id to success url");
-      window.history.pushState(null, document.title, params.get("success") + "?searchId="+ localStorage.getItem("searchId"));
+      window.location.href = params.get("success") + "?searchId=" + localStorage.getItem("searchId");
     }
   </script>
 </head>
